@@ -11,15 +11,17 @@ public class _02_RobotRace {
 	public static void main(String[] args) {
 		
 		boolean hasFinished = false;
+		int robVictoryNum = 404;
 		
 		// 2. create an array of 5 robots.
 		
-		Robot[] robArray = new Robot[5];
+		Robot[] robArray = new Robot[10];
 		
         // 3. use a for loop to initialize the robots
 		
 		for (int i = 0; i < robArray.length; i++) {
 			robArray[i] = new Robot();
+			robArray[i].setSpeed(25);
 		}
 		
 		Robot.setWindowSize(1000, 600);
@@ -28,7 +30,7 @@ public class _02_RobotRace {
 		
 		for (int i = 0; i < robArray.length; i++) {
 			robArray[i].setY(500);
-			robArray[i].setX(50 + i * 200);
+			robArray[i].setX(50 + i * 100);
 		}
     
         // 5. use another for loop to iterate through the array and make each robot move
@@ -38,8 +40,13 @@ public class _02_RobotRace {
 		
 		while (hasFinished == false) {
 			for (int i = 0; i < robArray.length; i++) {
-				robArray[i].move(25);
-				// if (robArray)
+				robArray[i].move(r.nextInt(50));
+				if (robArray[i].getY() <= 10) {
+					robVictoryNum = i;
+					hasFinished = true;
+					robArray[i].sparkle();
+					break;
+				}
 			}
 		}
     
@@ -47,6 +54,8 @@ public class _02_RobotRace {
         // screen.
     
         // 7. declare that robot the winner and throw it a party!
+		
+		JOptionPane.showMessageDialog(null, "Robot #" + (robVictoryNum + 1) + " has won!");
     
         // 8. try different races with different amounts of robots.
     
