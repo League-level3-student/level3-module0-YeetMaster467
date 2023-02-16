@@ -1,5 +1,9 @@
 package _01_Simple_Array_Algorithms;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 
 public class MoreArrayFun {
@@ -18,6 +22,8 @@ public class MoreArrayFun {
 		printStringArrReverse(stringArr);
 		System.out.println(" ");
 		printStringArrEveryOther(stringArr);
+		System.out.println(" ");
+		printStringArrRandom(stringArr);
 	}
 
 
@@ -52,7 +58,14 @@ public class MoreArrayFun {
     //   in a completely random order. Almost every run of the program should result in a different order.
 	
 	static void printStringArrRandom(String[] array) {
-		
+		ArrayList<String> str = new ArrayList<String>();
+		for (String s: array) {
+			str.add(s);
+		}
+		Collections.shuffle(str);
+		for (String s: str) {
+			System.out.println(s);
+		}
 	}
 	
 	public static boolean containsIntValue(int[] array, int value) {
