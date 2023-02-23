@@ -14,7 +14,7 @@ public class _01_IntroTo2DArrays {
         //    BE SURE TO USE THE ARRAY'S length VARIABLE
     	
     	for (int i = 0; i < num2D.length; i++) {
-    		for (int j = 0; j < num2D[i].length; i++) {
+    		for (int j = 0; j < num2D[i].length; j++) {
     			num2D[i][j] = j + i;
     		}
     	}
