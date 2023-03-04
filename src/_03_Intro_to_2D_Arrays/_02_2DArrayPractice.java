@@ -208,11 +208,15 @@ public class _02_2DArrayPractice {
      *    boundaries, return null.
      */
     public Integer getEastNeighbor(int[][] matrix, int row, int col) {
-    	if (row > matrix.length) {
-    		return null;
-    	} else {
-    		return matrix[row + 1][col];
+    	
+    	for (int i = 0; i < matrix[1].length; i++) {
+    		if (matrix[1][i] == matrix[row][col]) {
+    			
+    		}
     	}
+    	
+		return null;
+    	
     }
     
     public Integer getWestNeighbor(int[][] matrix, int row, int col) {
