@@ -92,6 +92,13 @@ public class TheWrongWayCow {
         					continue;
         				}
         			}
+        			if (westCnt < 2) {
+        				if (j - 2 > 0 && field[i][j - 1] == 'o' && field[i][j - 2] == 'w') {
+        					hm.put("West", new int[] {j, i});
+        					westCnt++;
+        					continue;
+        				}
+        			}
         			
         		}
         		
@@ -107,6 +114,9 @@ public class TheWrongWayCow {
         }
         if (eastCnt == 1) {
         	return hm.get("East");
+        }
+        if (westCnt == 1) {
+        	return hm.get("West");
         }
         
         return null;
